@@ -1,0 +1,103 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title> </title>
+  <meta name="description" content=" ">
+  <meta name="author" content="SitePoint">
+
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+</head>
+
+<body>
+  <script>
+function caesarCipher (str, num){
+    num = num % 26;
+    
+    var lowerCaseStr = str.toLowerCase();
+    var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    var newString = '';
+
+    for(var i = 0; i < lowerCaseStr.length; i++){
+        var currentLetter = lowerCaseStr[i];
+        var specialCharacter = /\b([/w])([A-Z])([a-z]+)?\b/gm; ///^[\w][A-Z]+$/
+        if(currentLetter === specialCharacter){ // change to !== alphabet later = currentLetter !== alphabet || currentLetter !== alphabet.toUpperCase()
+            newString += currentLetter;
+            continue;
+        }
+        var currentIndex = alphabet.indexOf(currentLetter);
+        var newIndex = currentIndex + num;
+
+        if(newIndex > 25) {
+            newIndex = newIndex - 26;
+        }
+        if(newIndex < 0) {
+            newIndex = newIndex + 26;
+        }
+        if(str[i] === str[i].toUpperCase()) {
+            newString += alphabet[newIndex].toUpperCase();
+        } else newString += alphabet[newIndex];
+    }
+    return newString;
+}
+
+
+// ************** Rot13 - + or - 13 example ***************
+
+// const alphabet = [
+//   'A',
+//   'B',
+//   'C',
+//   'D',
+//   'E',
+//   'F',
+//   'G',
+//   'H',
+//   'I',
+//   'J',
+//   'K',
+//   'L',
+//   'M',
+//   'N',
+//   'O',
+//   'P',
+//   'Q',
+//   'R',
+//   'S',
+//   'T',
+//   'U',
+//   'V',
+//   'W',
+//   'X',
+//   'Y',
+//   'Z'
+// ];
+
+// function rot13(str){
+//     let accumulator = "";
+
+//     for (let i = 0; i < str.length; i++) {
+//         //assign characters from Alphabet to const "char"
+//         const char = str[i];
+        
+//         //method to assign non-character glyphs to accumulator
+//         const isALetter = alphabet.includes('char');
+        
+//         if (isALetter === false) {
+//             accumulator += char;
+//         } else {
+//             //rotate + or - 13 spaces, then add to accumulator
+//             const charIndex = 
+//             alphabet.findIndex((c) => c === char);
+//             accumulator += alphabet[charIndex + 13] || alphabet[charIndex - 13];
+//         }
+
+//         return accumulator;
+// }
+
+  </script>
+</body>
+</html>
