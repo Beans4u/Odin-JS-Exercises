@@ -1,0 +1,88 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title> </title>
+  <meta name="description" content=" ">
+  <meta name="author" content="SitePoint">
+
+  <!--<link rel="stylesheet" href="css/style.css">-->
+
+</head>
+
+<body>
+  <script>
+  const caesar = function(str, num) {
+    num = num % 26;
+           
+    const alphabetLC = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    const alphabetUC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+            
+    for(let i = 0; i < albphabetLC || i < alphabetUC; i++){
+      let currentLetter = (alphabetLC[i] || alphabetUC[i]);
+      let currentIndex = (alphabetLC.indexOf(currentLetter) || alphabetUC.indexOf(currentLetter));
+      let newIndex = currentIndex + num;
+      let newLetter = (alphabetLC[newIndex] || alphabetUC[newIndex]);
+
+      let newString = "";
+       
+      newString += newLetter;
+
+    //// to wrap around the alphabet strings
+    //   if (alphabetLC[i] > 25 || alphabetUC[i] > 25){
+    //     alphabetLC[i] = 0 || alphabetUC[i] = 0;
+    //   } else if (alphabetLC[i] < 0 || alphabetUC[i] < 0){
+    //     alphabetLC[i] + 25 || alphabetUC[i] + 25;
+    //   } 
+            
+            
+            
+            // var newString = '';
+
+            // var lowerCaseStr = str.toLowerCase();
+            
+        
+            // for(var i = 0; i < lowerCaseStr.length; i++){
+
+            //     let IsLowerCase = false
+
+                // Check "is it a letter"
+                //// If not, add it to the string as-is and skip to the next one
+                //// If yes:
+
+                // Check if it's upper or lower case
+                //// if lower, set isLowerCase to true
+                //// if upper, leave isLowerCase alone
+
+                // Shift the character
+                //// Find where our character is in the alphabet and add/subtract
+                //// our "shift" to grab a letter at the new index
+
+                // Convert to upper/lower if necessary
+
+                // Add to string
+                
+                // var currentLetter = lowerCaseStr[i];
+                // if(alphabet.includes(currentLetter) || currentLetter !== alphabet.toUpperCase()){ // change to !== alphabet later
+                //     newString += currentLetter;
+                //     continue;
+                // }
+                // var currentIndex = alphabet.indexOf(currentLetter);
+                // var newIndex = currentIndex + num;
+        
+                // if(newIndex > 25) {
+                //     newIndex = newIndex - 26;
+                // }
+                // if(newIndex < 0) {
+                //     newIndex = newIndex + 26;
+                // }
+                // if(str[i] === str[i].toUpperCase()) {
+                //     newString += alphabet[newIndex].toUpperCase();
+                // } else newString += alphabet[newIndex];
+            }
+
+  </script>
+</body>
+</html>
